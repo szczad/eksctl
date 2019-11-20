@@ -3908,6 +3908,41 @@ func (_m *CloudFormationAPI) WaitUntilStackExistsWithContext(_a0 context.Context
 	return r0
 }
 
+// WaitUntilStackImportComplete provides a mock function with given fields: _a0
+func (_m *CloudFormationAPI) WaitUntilStackImportComplete(_a0 *cloudformation.DescribeStacksInput) error {
+	ret := _m.Called(_a0)
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(*cloudformation.DescribeStacksInput) error); ok {
+		r0 = rf(_a0)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
+// WaitUntilStackImportCompleteWithContext provides a mock function with given fields: _a0, _a1, _a2
+func (_m *CloudFormationAPI) WaitUntilStackImportCompleteWithContext(_a0 context.Context, _a1 *cloudformation.DescribeStacksInput, _a2 ...request.WaiterOption) error {
+	_va := make([]interface{}, len(_a2))
+	for _i := range _a2 {
+		_va[_i] = _a2[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, _a0, _a1)
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(context.Context, *cloudformation.DescribeStacksInput, ...request.WaiterOption) error); ok {
+		r0 = rf(_a0, _a1, _a2...)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
 // WaitUntilStackUpdateComplete provides a mock function with given fields: _a0
 func (_m *CloudFormationAPI) WaitUntilStackUpdateComplete(_a0 *cloudformation.DescribeStacksInput) error {
 	ret := _m.Called(_a0)
